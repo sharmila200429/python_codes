@@ -90,18 +90,16 @@ documents = [
 "Python is great for data science",
 "I love learning new programming languages"
 ]
-# Create the Bag of Words model
 vectorizer = CountVectorizer()
 X = vectorizer.fit_transform(documents)
-# Get feature names and transformed data
 feature_names = vectorizer.get_feature_names_out()
 print("Feature Names:", feature_names)
 print("Bag of Words Model:\n", X.toarray())
 
+#N gram
 def n_grams(text, n):
     words = text.split()  
     return [tuple(words[i:i + n]) for i in range(len(words) - n + 1)] 
-# Example usage
 text = "I love programming in Python"
 n = 2
 print(n_grams(text, n))
